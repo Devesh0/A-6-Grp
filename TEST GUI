@@ -17,6 +17,7 @@ bGo = Button(master, image=go).grid(row = 0)
 bSettings = Button(master, image = settings, command = PYL).grid(row = 1)
 
 ## images need to be put in the same file as this for the buttons to work
+## test 
 
 mainloop()
 
