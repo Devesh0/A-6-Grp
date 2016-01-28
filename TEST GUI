@@ -1,0 +1,21 @@
+from tkinter import *
+from PIL import Image, ImageTk
+
+def PYL():
+    print("1")
+
+
+master = Tk()
+
+w = Canvas(master, width=64, height=48)
+w.grid()
+imageGo = Image.open("images.png")
+go = ImageTk.PhotoImage(imageGo)
+imageSettings = Image.open("settings.jpg")
+settings = ImageTk.PhotoImage(imageSettings)
+bGo = Button(master, image=go).grid(row = 0)
+bSettings = Button(master, image = settings, command = PYL).grid(row = 1)
+
+
+mainloop()
+
