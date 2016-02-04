@@ -22,11 +22,11 @@ Map obstacles:
 
 Tasks: 
 
-Week 4:
+Week 3:
 - Make sure everyone is on GIT and knows how to use it.
 - Upload the UML diagram to GIT. Possibly edit it to fit new game idea. 
 - Get the 6 zones set-up, be able to specify to the robot which zone to go to.
-Week 5:
+Week 4/5:
 - Implement the different map zones from Martin/Tomasz.
 - Implement the parts from Aiman into the map. 
 - Create the code behind the different parts: name, type, value etc.
@@ -46,6 +46,6 @@ Week 7:
   - Get somebody else to play it? 
 
 Long term improvements after basic game implementation:
-- A new game/save game option. (sql) 
+- A new game/save game option. (sql) (saves robot 
 - Different levels of difficulty? 
 
