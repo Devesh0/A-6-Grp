@@ -21,6 +21,8 @@ Map obstacles:
 - Sand (robot goes slower) 
 
 Tasks: 
+- Make sure everyone is on GIT and knows how to use it.
+- Upload the UML diagram to GIT. Possibly edit it to fit new game idea. 
 - Get the 6 zones set-up, be able to specify to the robot which zone to go to.
 - Implement the different map zones from Martin/Tomasz.
 - Implement the parts from Aiman into the map. 
