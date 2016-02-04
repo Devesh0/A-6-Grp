@@ -1,9 +1,9 @@
 ROLES:
 Martin: Map.
 Devesh: General programming. 
-Tomasz: Map. 
+Tomasz: Map/map obstacles.  
 Josh: General programming. 
-Guanshen: - 
+Guanshen: General programming?
 Aiman: Spaceship parts + OOP code behind it (with Josh)
 
 Spaceship parts:
@@ -11,17 +11,30 @@ Spaceship parts:
 - CPU (http://goo.gl/1BNZMC)
 - Engine (http://goo.gl/mnGiX7)  
 - Batteries (http://goo.gl/pjnqJP)
+- Door 
 - Antenna 
 - Propulsion 
 
+Map obstacles:
+- Rocks (can't go through it)
+- Wall (can't go through it)
+- Sand (robot goes slower) 
 
+Tasks: 
+- Get the 6 zones set-up, be able to specify to the robot which zone to go to.
+- Implement the different map zones from Martin/Tomasz.
+- Implement the parts from Aiman into the map. 
+- Create the code behind the different parts: name, type, value etc.
+- Create an inventory button/option (possibly press "i" to bring it up. Shows the parts collected.)
+- Set up the robot's path-finding: avoiding objects? 
+- Create a search system where the user specifies what order they find objects in (group requirement 2)
+- Set up the robot's path-finding: locating most valuable objects? (group requirement 2)
+- Create a system where the user specifies an amount of time to locate a certain item
+- Create a sorting system in the ventory, allowing the user to order the items in levels of value and other criteria (group requirements)
+- Create a system whereby after the robot runs out of fuel their items collected are displayed on screen. 
+- Consult the group requirements and check that all requirements are met. 
 
-Batteries
-
-Tasks:
-- Explain the game to the group now.
-- Create the 6 game zones, art-wise. Different tiles = different effects on robot.
-- Create 6 plain zones that can be navigated between.
-- Create the treasure, art-wise. Spaceship parts. 
-
+Long term improvements after basic game implementation:
+- A new game/save game option. (sql) 
+- Different levels of difficulty? 
 
