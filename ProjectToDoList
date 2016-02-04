@@ -28,6 +28,7 @@ Week 3:
 - Get the 6 zones set-up, be able to specify to the robot which zone to go to.
 Week 4/5:
 - Implement the different map zones from Martin/Tomasz.
+- Update the UML diagrams based on the algorithms. (week 4 brief)
 - Implement the parts from Aiman into the map. Set locations across the map. Randomized. 
 - Create the code behind the different parts: name, type, value etc.
 - Create an inventory button/option (possibly press "i" to bring it up. Shows the parts collected.)
