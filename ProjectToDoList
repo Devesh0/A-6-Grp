@@ -35,6 +35,9 @@ Tasks:
 - Create a sorting system in the ventory, allowing the user to order the items in levels of value and other criteria (group requirements)
 - Create a system whereby after the robot runs out of fuel their items collected are displayed on screen. 
 - Consult the group requirements and check that all requirements are met. 
+- Testing: 
+  - Play the game and try to emulate all scenarios.
+  - Get somebody else to play it? 
 
 Long term improvements after basic game implementation:
 - A new game/save game option. (sql) 
