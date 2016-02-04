@@ -46,6 +46,6 @@ Week 7:
   - Get somebody else to play it? 
 
 Long term improvements after basic game implementation:
-- A new game/save game option. (sql) (saves robot 
+- A new game/save game option. (sql) (saves robot location + parts it has collected)
 - Different levels of difficulty? 
 
