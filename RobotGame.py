@@ -24,7 +24,11 @@ class userInterface():
         self.exitButton.pack()
 
     def settings(self):
-        pass
+        # Might need to edit this a little. 
+        self.SettingsWindow = Tk()
+        self.label = Label(self.SettingsWindow, text="There should be settings here. ")
+        self.label.pack()
+        self.SettingsWindow.mainloop()
 
     def loadGameArena(self):
         # Eventually this will have a new game/load game option prior to loading the actual game
@@ -41,12 +45,15 @@ class theRobotGame():
         self.createMap()
         self.robot = self.zone.create_rectangle(10, 10, 20+20, 20+20)
         self.x1, self.y1, self.x2, self.y2 = self.zone.coords(self.robot)
-        self.robotLocation = 1
         
     def createMap(self):
         self.zone = Canvas(self.window, width=1000, height=600, bg='white')
         self.zone.pack(fill=BOTH, expand=1)
-        
+        self.wall = self.zone.create_rectangle(25,25,950,50, fill="black")
+        self.wall2 = self.zone.create_rectangle(25,25,50,550, fill="black")
+        self.wall3 = self.zone.create_rectangle(50,550,950,525, fill="black")
+        self.wall4 = self.zone.create_rectangle(950,525,925,325, fill="black")
+        self.wall5 = self.zone.create_rectangle(950,50,925,250, fill="black")
         #teleport1 = self.zone.create_line
         self.zone.x_min = 0
         self.zone.y_min = 0
@@ -89,14 +96,12 @@ class theRobotGame():
             else:
                 self.zone.coords(self.robot, self.x1, self.y1+10, self.x2, self.y2+10)
 
-
         self.zone.focus_set()
         self.zone.bind("<Right>", rightKey)
         self.zone.bind("<Left>", leftKey)
         self.zone.bind("<Up>", upKey)
         self.zone.bind("<Down>", downKey)
         
-
 def main():
     window = Tk()
     window.geometry("400x200+450+300") # Window needs to be centered on each PC screen 
