@@ -38,7 +38,6 @@ class userInterface():
 class theRobotGame():
 
     
-    
     def __init__(self, window):
         self.window = window
         self.window.geometry("1000x600+200+60")
@@ -54,48 +53,55 @@ class theRobotGame():
         self.wall3 = self.zone.create_rectangle(50,550,950,525, fill="black")
         self.wall4 = self.zone.create_rectangle(950,525,925,325, fill="black")
         self.wall5 = self.zone.create_rectangle(950,50,925,250, fill="black")
-        #teleport1 = self.zone.create_line
+##        self.teleport1 = self.zone.create_line(485, 590, 430, 590, fill="green", width=2)
+        
         self.zone.x_min = 0
         self.zone.y_min = 0
         self.zone.x_max = 991
         self.zone.y_max = 600
-        self.keyboardMovement()
+        self.initiateGameplay()
 
-    def keyboardMovement(self):
+    def initiateGameplay(self):
         # Temporary movement for testing purposes
         def rightKey(event):
             self.x1, self.y1, self.x2, self.y2 = self.zone.coords(self.robot)
 
-            if self.x2 >= self.zone.x_max:
+            if self.x2 >= self.zone.x_max or self.battery == 0:
                 self.zone.coords(self.robot, self.x1, self.y1, self.x2, self.y2)
             else:
                 self.zone.coords(self.robot, self.x1+10, self.y1, self.x2+10, self.y2)
+                self.battery -= 0.5
             
             
         def leftKey(event):
             self.x1, self.y1, self.x2, self.y2 = self.zone.coords(self.robot)
 
-            if self.x1 <= self.zone.x_min:
+            if self.x1 <= self.zone.x_min or self.battery == 0:
                 self.zone.coords(self.robot, self.x1, self.y1, self.x2, self.y2)
             else:
                 self.zone.coords(self.robot, self.x1-10, self.y1, self.x2-10, self.y2)
+                self.battery -= 0.5
             
         def upKey(event):
             self.x1, self.y1, self.x2, self.y2 = self.zone.coords(self.robot)
 
-            if self.y1 <= self.zone.y_min:
+            if self.y1 <= self.zone.y_min or self.battery == 0:
                 self.zone.coords(self.robot, self.x1, self.y1, self.x2, self.y2)
             else:
                 self.zone.coords(self.robot, self.x1, self.y1-10, self.x2, self.y2-10)
+                self.battery -= 0.5
             
         def downKey(event):
             self.x1, self.y1, self.x2, self.y2 = self.zone.coords(self.robot)
 
-            if self.y2 >= self.zone.y_max:
+            if self.y2 >= self.zone.y_max or self.battery == 0:
                 self.zone.coords(self.robot, self.x1, self.y1, self.x2, self.y2)
+
             else:
                 self.zone.coords(self.robot, self.x1, self.y1+10, self.x2, self.y2+10)
+                self.battery -= 0.5
 
+        self.battery = 100.0
         self.zone.focus_set()
         self.zone.bind("<Right>", rightKey)
         self.zone.bind("<Left>", leftKey)
