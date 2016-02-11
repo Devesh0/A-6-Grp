@@ -15,6 +15,14 @@ Spaceship parts:
 - Antenna 
 - Propulsion 
 
+5x batteries
+5x fuel 
+3x propulsion
+2x doors
+2x antenna 
+1x cpu
+
+
 Map obstacles:
 - Rocks (can't go through it)
 - Wall (can't go through it)
