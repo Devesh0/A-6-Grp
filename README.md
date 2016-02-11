@@ -27,4 +27,5 @@ Week 7:
 
 Advanced features:
 - Map randomization. 
-- SQL save/load game mode if there's time. 
+- SQL save/load game mode if there's time.
+- More advanced tiles + path-finding to deal with them. 
