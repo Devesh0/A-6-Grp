@@ -56,5 +56,6 @@ Week 7:
 
 Long term improvements after basic game implementation:
 - A new game/load game/save game option. (sql) (saves robot location + parts it has collected)
+- Randomize map 
 - Different levels of difficulty? 
 
