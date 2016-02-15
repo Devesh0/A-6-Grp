@@ -1,12 +1,13 @@
 # To-do list
 
 Week 4:
-- Get the maps integrated into the game.
+- Get the maps integrated into the game.(DONE)
 - Make the transitions between the zones (DONE)
 
 Week 5: 
-- Create inventory, command windows.
+- Be able to detect walls, and stop the robots movement when detected. 
 - Put all the objects into the map, use keyboard movement to collect them and ensure they are going into the inventory. Display the items in the inventory. 
+- Create inventory, command windows.
 - Phase out: keyboard movement, phase in: automation - specify to the robot to go to a particular coordinate of a zone and make sure it goes there.
 - Continue to work on algorithm. 
 - Create a class for the parts/batteries. Instantiate them into the map.
