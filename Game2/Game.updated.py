@@ -97,7 +97,7 @@ class theRobotGame():
             self.zone.x_max = 991
             self.zone.y_max = 600
             self.robot = self.zone.create_rectangle(self.coords)
-            self.canvas6(20,20,50,50)
+            self.canvas4(20,20,50,50)
             self.initiateGameplay()
 
         if self.robotLocation == 3:
@@ -127,7 +127,7 @@ class theRobotGame():
             self.zone.x_max = 991
             self.zone.y_max = 600
             self.robot = self.zone.create_rectangle(self.coords)
-            self.canvas4(20,20,50,50)
+            self.canvas6(20,20,50,50)
             self.initiateGameplay()
 
         if self.robotLocation == 5:
