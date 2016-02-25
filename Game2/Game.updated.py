@@ -64,9 +64,9 @@ class theRobotGame():
             self.zone.y_max = 600
             self.robot = self.zone.create_rectangle(self.coords)
             self.canvas1(20,20,50,50)
-            self.photo = PhotoImage(file="FUEL.png")
-            self.label = Label(self.zone, image=self.photo)
-            self.label.grid(padx=320, pady=250)
+          #  self.photo = PhotoImage(file="FUEL.png")
+           # self.label = Label(self.zone, image=self.photo)
+            #self.label.grid(padx=320, pady=250)
             self.initiateGameplay()
 
         if self.robotLocation == 2:
@@ -163,6 +163,12 @@ class theRobotGame():
                     elif symbol=="0":
                        botx += 50
                        topx = botx - 30
+                    elif symbol=="F":
+                        self.photo = PhotoImage(file="FUEL.png")
+                        self.label = Label(self.zone, image=self.photo)
+                        self.label.grid(padx=topx, pady=topy)
+                        botx += 50
+                        topx = botx - 30
     def canvas2(self, topx,topy,botx,boty):
             room = open("MAP 2.txt","r")
             content = room.readlines()
@@ -181,6 +187,12 @@ class theRobotGame():
                     elif symbol=="0":
                        botx += 50
                        topx = botx - 30
+                    elif symbol=="F":
+                        self.photo = PhotoImage(file="FUEL.png")
+                        self.label = Label(self.zone, image=self.photo)
+                        self.label.grid(padx=topx, pady=topy)
+                        botx += 50
+                        topx = botx - 30
     def canvas3(self, topx,topy,botx,boty):
             room = open("MAP 3.txt","r")
             content = room.readlines()
