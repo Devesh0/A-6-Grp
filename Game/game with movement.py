@@ -42,7 +42,7 @@ class theRobotGame():
         self.window = window
         self.window.geometry("1000x600+200+60")
         self.robotLocation = 1
-        self.robotCoords = (50, 50, 70, 70)
+        self.robotCoords = (50, 50, 80, 80)
         self.createMap(self.robotCoords)
         
         self.x1, self.y1, self.x2, self.y2 = self.zone.coords(self.robot)
@@ -56,17 +56,14 @@ class theRobotGame():
             self.zone = Canvas(self.window, width=1000, height=600, bg='cyan')
             self.window.title("Zone 1")
             self.zone.pack(fill=BOTH, expand=1)
-            self.teleport1 = self.zone.create_line(500, 597, 450, 597, fill="green", width=2)
-            self.teleport2 = self.zone.create_line(996, 270, 996, 310, fill ="green", width=2)
+            self.teleport1 = self.zone.create_line(290, 560, 320, 560, fill="green", width=2)
+            self.teleport2 = self.zone.create_line(590, 290, 590, 320, fill ="green", width=2)
             self.zone.x_min = 0
             self.zone.y_min = 0
             self.zone.x_max = 991
             self.zone.y_max = 600
             self.robot = self.zone.create_rectangle(self.coords)
             self.canvas1(20,20,50,50)
-            self.photo = PhotoImage(file="FUEL.png")
-            self.label = Label(self.zone, image=self.photo)
-            self.label.grid(padx=320, pady=250)
             self.initiateGameplay()
 
         if self.robotLocation == 2:
@@ -74,9 +71,9 @@ class theRobotGame():
             self.zone = Canvas(self.window, width=1000, height=600, bg='cyan')
             self.window.title("Zone 2")
             self.zone.pack(fill=BOTH, expand=1)
-            self.teleport2 = self.zone.create_line(3, 270, 3, 310, fill ="green", width=2)
-            self.teleport3 = self.zone.create_line(996, 270, 996, 310, fill="green", width=2)
-            self.teleport7 = self.zone.create_line(500, 597, 450, 597, fill="green", width=2)
+            self.teleport2 = self.zone.create_line(20, 290, 20, 320, fill ="green", width=2)
+            self.teleport3 = self.zone.create_line(290, 560, 320, 560, fill="green", width=2)
+            self.teleport7 = self.zone.create_line(590, 290, 590, 320, fill="green", width=2)
             self.zone.x_min = 0
             self.zone.y_min = 0
             self.zone.x_max = 991
@@ -90,8 +87,8 @@ class theRobotGame():
             self.zone = Canvas(self.window, width=1000, height=600, bg='cyan')
             self.window.title("Zone 6")
             self.zone.pack(fill=BOTH, expand=1)
-            self.teleport1 = self.zone.create_line(500, 3, 450, 3, fill="green", width=2)
-            self.teleport6 = self.zone.create_line(996, 270, 996, 310, fill ="green", width=2)
+            self.teleport1 = self.zone.create_line(290,20,320,20, fill="green", width=2)
+            self.teleport6 = self.zone.create_line(20,290,20,320, fill ="green", width=2)
             self.zone.x_min = 0
             self.zone.y_min = 0
             self.zone.x_max = 991
@@ -105,8 +102,8 @@ class theRobotGame():
             self.zone = Canvas(self.window, width=1000, height=600, bg='cyan')
             self.window.title("Zone 3")
             self.zone.pack(fill=BOTH, expand=1)
-            self.teleport3 = self.zone.create_line(3, 270, 3, 310, fill="green", width=2)
-            self.teleport4 = self.zone.create_line(500, 597, 450, 597, fill="green", width=2)
+            self.teleport3 = self.zone.create_line(20,290,20,320, fill="green", width=2)
+            self.teleport4 = self.zone.create_line(290,560,320,560, fill="green", width=2)
             self.zone.x_min = 0
             self.zone.y_min = 0
             self.zone.x_max = 991
@@ -120,8 +117,8 @@ class theRobotGame():
             self.zone = Canvas(self.window, width=1000, height=600, bg='cyan')
             self.window.title("Zone 4")
             self.zone.pack(fill=BOTH, expand=1)
-            self.teleport4 = self.zone.create_line(500, 3, 450, 3, fill="green", width=2)
-            self.teleport5 = self.zone.create_line(3, 270, 3, 310, fill ="green", width=2)
+            self.teleport4 = self.zone.create_line(290, 20, 320, 20, fill="green", width=2)
+            self.teleport5 = self.zone.create_line(590, 290, 590, 320, fill ="green", width=2)
             self.zone.x_min = 0
             self.zone.y_min = 0
             self.zone.x_max = 991
@@ -135,9 +132,9 @@ class theRobotGame():
             self.zone = Canvas(self.window, width=1000, height=600, bg='cyan')
             self.window.title("Zone 5")
             self.zone.pack(fill=BOTH, expand=1)
-            self.teleport5 = self.zone.create_line(3, 270, 3, 310, fill ="green", width=2)
-            self.teleport6 = self.zone.create_line(996, 270, 996, 310, fill ="green", width=2)
-            self.teleport7 = self.zone.create_line(500, 3, 450, 3, fill="green", width=2)
+            self.teleport5 = self.zone.create_line(20,290,20,320, fill ="green", width=2)
+            self.teleport6 = self.zone.create_line(290,20,320,20, fill ="green", width=2)
+            self.teleport7 = self.zone.create_line(590,290,590,320, fill="green", width=2)
             self.zone.x_min = 0
             self.zone.y_min = 0
             self.zone.x_max = 991
@@ -153,7 +150,7 @@ class theRobotGame():
                 for symbol in content[i]:
                     if symbol == "W":
                         self.wall = self.zone.create_rectangle(topx,topy,botx,boty, fill="black")
-                        botx += 50
+                        botx += 30
                         topx +=20
                     elif symbol=="\n":
                         topy = boty
@@ -161,8 +158,14 @@ class theRobotGame():
                         botx=50
                         topx=20
                     elif symbol=="0":
-                       botx += 50
+                       botx += 30
                        topx = botx - 30
+                    elif symbol=="F":
+                        self.photo = PhotoImage(file="FUEL.png")
+                        self.label = Label(self.zone, image=self.photo)
+                        self.label.grid(padx=topx, pady=topy)
+                        botx += 50
+                        topx = botx - 30
     def canvas2(self, topx,topy,botx,boty):
             room = open("MAP 2.txt","r")
             content = room.readlines()
@@ -171,7 +174,7 @@ class theRobotGame():
                 for symbol in content[i]:
                     if symbol == "W":
                         self.wall = self.zone.create_rectangle(topx,topy,botx,boty, fill="black")
-                        botx += 50
+                        botx += 30
                         topx +=20
                     elif symbol=="\n":
                         topy = boty
@@ -179,8 +182,14 @@ class theRobotGame():
                         botx=50
                         topx=20
                     elif symbol=="0":
-                       botx += 50
+                       botx += 30
                        topx = botx - 30
+                    elif symbol=="F":
+                        self.photo = PhotoImage(file="FUEL.png")
+                        self.label = Label(self.zone, image=self.photo)
+                        self.label.grid(padx=topx, pady=topy)
+                        botx += 50
+                        topx = botx - 30
     def canvas3(self, topx,topy,botx,boty):
             room = open("MAP 3.txt","r")
             content = room.readlines()
@@ -189,7 +198,7 @@ class theRobotGame():
                 for symbol in content[i]:
                     if symbol == "W":
                         self.wall = self.zone.create_rectangle(topx,topy,botx,boty, fill="black")
-                        botx += 50
+                        botx += 30
                         topx +=20
                     elif symbol=="\n":
                         topy = boty
@@ -197,7 +206,7 @@ class theRobotGame():
                         botx=50
                         topx=20
                     elif symbol=="0":
-                       botx += 50
+                       botx += 30
                        topx = botx - 30
     def canvas4(self, topx,topy,botx,boty):
             room = open("MAP 4.txt","r")
@@ -207,7 +216,7 @@ class theRobotGame():
                 for symbol in content[i]:
                     if symbol == "W":
                         self.wall = self.zone.create_rectangle(topx,topy,botx,boty, fill="black")
-                        botx += 50
+                        botx += 30
                         topx +=20
                     elif symbol=="\n":
                         topy = boty
@@ -215,7 +224,7 @@ class theRobotGame():
                         botx=50
                         topx=20
                     elif symbol=="0":
-                       botx += 50
+                       botx += 30
                        topx = botx - 30
     def canvas5(self, topx,topy,botx,boty):
             room = open("MAP 5.txt","r")
@@ -225,7 +234,7 @@ class theRobotGame():
                 for symbol in content[i]:
                     if symbol == "W":
                         self.wall = self.zone.create_rectangle(topx,topy,botx,boty, fill="black")
-                        botx += 50
+                        botx += 30
                         topx +=20
                     elif symbol=="\n":
                         topy = boty
@@ -233,7 +242,7 @@ class theRobotGame():
                         botx=50
                         topx=20
                     elif symbol=="0":
-                       botx += 50
+                       botx += 30
                        topx = botx - 30
     def canvas6(self, topx,topy,botx,boty):
             room = open("MAP 6.txt","r")
@@ -243,7 +252,7 @@ class theRobotGame():
                 for symbol in content[i]:
                     if symbol == "W":
                         self.wall = self.zone.create_rectangle(topx,topy,botx,boty, fill="black")
-                        botx += 50
+                        botx += 30
                         topx +=20
                     elif symbol=="\n":
                         topy = boty
@@ -251,7 +260,7 @@ class theRobotGame():
                         botx=50
                         topx=20
                     elif symbol=="0":
-                       botx += 50
+                       botx += 30
                        topx = botx - 30
 
         
@@ -267,52 +276,52 @@ class theRobotGame():
             if self.x2 >= self.zone.x_max or self.battery == 0:
                 self.zone.coords(self.robot, self.x1, self.y1, self.x2, self.y2)
             else:
-                self.zone.coords(self.robot, self.x1+10, self.y1, self.x2+10, self.y2)
+                self.zone.coords(self.robot, self.x1+30, self.y1, self.x2+30, self.y2)
 ##                self.battery -= 0.5
 
             if self.robotLocation == 1:
 
-                self.teleportTuple2 = self.zone.find_overlapping(996, 270, 996, 310)
+                self.teleportTuple2 = self.zone.find_overlapping(590,260,590,320)
                 
                 if self.robot in self.teleportTuple2:
                     self.robotLocation = 2
                     self.zone.pack_forget()
-                    self.robotCoords = (4, 280, 24, 300)
+                    self.robotCoords = (50,290,80,320)
                     self.createMap(self.robotCoords)
                 else:
                     pass
 
             if self.robotLocation == 2:
 
-                self.teleportTuple3 = self.zone.find_overlapping(990,280,996,300)
+                self.teleportTuple3 = self.zone.find_overlapping(590,260,590,320)
 
                 if self.robot in self.teleportTuple3:
                     self.robotLocation = 3
-                    self.robotCoords = (4, 280, 24, 300)
+                    self.robotCoords = (50,290,80,320)
                     self.createMap(self.robotCoords)
                 else:
                     pass
 
             if self.robotLocation == 5:
 
-                self.teleportTuple5 = self.zone.find_overlapping(996, 270, 996, 310)
+                self.teleportTuple5 = self.zone.find_overlapping(590,260,590,320)
                 
                 if self.robot in self.teleportTuple5:
-                    self.robotLocation = 4
+                    self.robotLocation = 6
                     self.zone.pack_forget()
-                    self.robotCoords = (4, 280, 24, 300)
+                    self.robotCoords = (50,290,80,320)
                     self.createMap(self.robotCoords)
                 else:
                     pass
 
-            if self.robotLocation == 6:
+            if self.robotLocation == 4:
 
-                self.teleportTuple6 = self.zone.find_overlapping(996, 270, 996, 310)
+                self.teleportTuple6 = self.zone.find_overlapping(590, 260, 590, 320)
 
                 if self.robot in self.teleportTuple6:
                     self.robotLocation = 5
                     self.zone.pack_forget()
-                    self.robotCoords = (4, 280, 24, 300)
+                    self.robotCoords = (50,290,80,320)
                     self.createMap(self.robotCoords)
                 else:
                     pass
@@ -325,51 +334,51 @@ class theRobotGame():
             if self.x1 <= self.zone.x_min or self.battery == 0:
                 self.zone.coords(self.robot, self.x1, self.y1, self.x2, self.y2)
             else:
-                self.zone.coords(self.robot, self.x1-10, self.y1, self.x2-10, self.y2)
+                self.zone.coords(self.robot, self.x1-30, self.y1, self.x2-30, self.y2)
 ##                self.battery -= 0.5
 
             if self.robotLocation == 2:
 
-                self.teleportTuple1 = self.zone.find_overlapping(3, 270, 3, 310)
+                self.teleportTuple1 = self.zone.find_overlapping(20,290,20,320)
 
                 if self.robot in self.teleportTuple1:
                     self.robotLocation = 1
                     self.zone.pack_forget()
-                    self.robotCoords = (976, 270, 996, 290)
+                    self.robotCoords = (530,290,560,320)
                     self.createMap(self.robotCoords)
 
             if self.robotLocation ==3:
 
-                self.teleportTuple3 = self.zone.find_overlapping(3, 270, 3, 310)
+                self.teleportTuple3 = self.zone.find_overlapping(20,290,20,320)
 
                 if self.robot in self.teleportTuple3:
                     self.robotLocation = 2
                     self.zone.pack_forget()
-                    self.robotCoords = (976, 270, 996, 290)
+                    self.robotCoords = (530,290,560,320)
                     self.createMap(self.robotCoords)
                 else:
                     pass
 
-            if self.robotLocation == 4:
+            if self.robotLocation == 6:
 
-                self.teleportTuple5 = self.zone.find_overlapping(3, 270, 3, 310)
+                self.teleportTuple5 = self.zone.find_overlapping(20,290,20,320)
 
                 if self.robot in self.teleportTuple5:
                     self.robotLocation = 5
                     self.zone.pack_forget()
-                    self.robotCoords = (976, 270, 996, 290)
+                    self.robotCoords = (530,290,560,320)
                     self.createMap(self.robotCoords)
                 else:
                     pass
 
             if self.robotLocation == 5:
 
-                self.teleportTuple6 = self.zone.find_overlapping(3, 270, 3, 310)
+                self.teleportTuple6 = self.zone.find_overlapping(20,290,20,320)
 
                 if self.robot in self.teleportTuple6:
-                    self.robotLocation = 6
+                    self.robotLocation = 4
                     self.zone.pack_forget()
-                    self.robotCoords = (976, 270, 996, 290)
+                    self.robotCoords = (530,290,560,320)
                     self.createMap(self.robotCoords)
                 else:
                     pass
@@ -381,43 +390,43 @@ class theRobotGame():
             if self.y1 <= self.zone.y_min or self.battery == 0:
                 self.zone.coords(self.robot, self.x1, self.y1, self.x2, self.y2)
             else:
-                self.zone.coords(self.robot, self.x1, self.y1-10, self.x2, self.y2-10)
+                self.zone.coords(self.robot, self.x1, self.y1-30, self.x2, self.y2-30)
 ##                self.battery -= 0.5
 
            
 
             if self.robotLocation == 6:
 
-                self.teleportTuple1 = self.zone.find_overlapping(470, 1, 495, 1)
+                self.teleportTuple1 = self.zone.find_overlapping(290,20,320,20)
 
                 if self.robot in self.teleportTuple1:
-                    self.robotLocation = 1
+                    self.robotLocation = 3
                     self.zone.pack_forget()
-                    self.robotCoords = (447, 627, 470, 605)
+                    self.robotCoords = (290,500,320,530)
                     self.createMap(self.robotCoords)
                 else:
                     pass
 
             if self.robotLocation == 4:
 
-                self.teleportTuple4 = self.zone.find_overlapping(470,1, 495, 1)
+                self.teleportTuple4 = self.zone.find_overlapping(290,20,320,20)
 
                 if self.robot in self.teleportTuple4:
-                    self.robotLocation = 3
+                    self.robotLocation = 1
                     self.zone.pack_forget()
-                    self.robotCoords = (447, 627, 470, 605)
+                    self.robotCoords = (290,500,320,530)
                     self.createMap(self.robotCoords)
                 else:
                     pass
 
             if self.robotLocation == 5:
 
-                self.teleportTuple7 = self.zone.find_overlapping(470, 1, 495, 1)
+                self.teleportTuple7 = self.zone.find_overlapping(290,20,320,20)
 
                 if self.robot in self.teleportTuple7:
                     self.robotLocation = 2
                     self.zone.pack_forget()
-                    self.robotCoords = (447, 627, 470, 605)
+                    self.robotCoords = (290,500,320,530)
                     self.createMap(self.robotCoords)
                 else:
                     pass
@@ -430,37 +439,37 @@ class theRobotGame():
                 self.zone.coords(self.robot, self.x1, self.y1, self.x2, self.y2)
 
             else:
-                self.zone.coords(self.robot, self.x1, self.y1+10, self.x2, self.y2+10)
+                self.zone.coords(self.robot, self.x1, self.y1+30, self.x2, self.y2+30)
 ##                self.battery -= 0.5
 
             if self.robotLocation == 1:
 
-                self.teleportTuple1 = self.zone.find_overlapping(500, 597, 450, 597)
+                self.teleportTuple1 = self.zone.find_overlapping(290,560,320,560)
                 
                 if self.robot in self.teleportTuple1:
-                    self.robotLocation = 6
-                    self.robotCoords = (460, 3, 480, 23)
+                    self.robotLocation = 4
+                    self.robotCoords = (290,50,320,80)
                     self.createMap(self.robotCoords)
                 else:
                     pass
             if self.robotLocation == 3:
 
-                self.teleportTuple4 = self.zone.find_overlapping(510, 605, 450, 597)
+                self.teleportTuple4 = self.zone.find_overlapping(290,560,320,560)
                 
                 if self.robot in self.teleportTuple4:
-                    self.robotLocation = 4
-                    self.robotCoords = (460, 3, 480, 23)
+                    self.robotLocation = 6
+                    self.robotCoords = (290,50,320,80)
                     self.createMap(self.robotCoords)
                 else:
                     pass
 
             if self.robotLocation == 2:
 
-                self.teleportTuple7 = self.zone.find_overlapping(510, 605, 450, 597)
+                self.teleportTuple7 = self.zone.find_overlapping(290,560,320,560)
 
                 if self.robot in self.teleportTuple7:
                     self.robotLocation = 5
-                    self.robotCoords= (460, 3, 480, 23)
+                    self.robotCoords= (290,50,320,80)
                     self.createMap(self.robotCoords)
                 else:
                     pass
